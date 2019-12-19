@@ -11,6 +11,7 @@
 #include <string>
 using namespace std;
 
+// pack(): 确保struct里面的东西是连续排列的，没有padding
 #pragma pack(push, 1)
 
 struct Person {
@@ -35,6 +36,7 @@ int main() {
 
 	if (outputFile.is_open()) {
 
+		// 因为写入的buffer要求是 char*，所以要cast，写入的是对应的地址
 		outputFile.write(reinterpret_cast<char *>(&someone), sizeof(Person));
 
 		outputFile.close();

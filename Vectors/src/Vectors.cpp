@@ -27,8 +27,10 @@ int main() {
 	cout << endl;
 
 	cout << "Iterator loop: " << endl;
+
+	// auto 实际上是 iterator， iterator其实是指针，所以要用 * 取得对应地址的值
 	for(auto it = strings.begin(); it != strings.end(); ++it) {
-		cout << *it << endl;
+		cout << *it << endl;	// 注意要用 *it 取值！
 	}
 	cout << endl;
 
