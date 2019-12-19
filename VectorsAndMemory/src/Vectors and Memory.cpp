@@ -26,12 +26,12 @@ int main() {
 			cout << "Capacity: " << capacity << endl;
 		}
 
-		numbers.push_back(i);
+		numbers.push_back(i);	// push_back 会使 size + 1
 	}
 
-	numbers.reserve(100000);
+	numbers.reserve(100000);	// capacity 变为 100000
 	cout << numbers[2] << endl;
-	cout << "Size: " << numbers.size() << endl;
+	cout << "Size: " << numbers.size() << endl;	// size 依然是 10000，可以用numbers.resize()来改变vector的size
 	cout << "Capacity: " << numbers.capacity() << endl;
 
 
