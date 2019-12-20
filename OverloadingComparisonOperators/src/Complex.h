@@ -33,11 +33,19 @@ public:
 
 	bool operator==(const Complex &other) const;
 	bool operator!=(const Complex &other) const;
+	// 重构 *号
+	Complex operator*() const;
 };
 
 ostream &operator<<(ostream &out, const Complex &c);
+
+// complex + complex
 Complex operator+(const Complex &c1, const Complex &c2);
+
+// complex + d
 Complex operator+(const Complex &c1, double d);
+
+// d + complex
 Complex operator+(double d, const Complex &c1);
 
 } /* namespace caveofprogramming */

@@ -15,6 +15,7 @@ public:
 		
 	}
 
+	// destructor
 	~Test()
 	{
 		
@@ -36,10 +37,11 @@ int main(int argc, char const *argv[])
 
 	cout << endl;
 
+	// reference 去 test1，但是如果pop了，就无法再访问了
 	Test &test1 = testStack.top();
 	test1.print();
 
-	testStack.pop();
+	testStack.pop();	// destory test1
 	Test &test2 = testStack.top();
 	test2.print();
 

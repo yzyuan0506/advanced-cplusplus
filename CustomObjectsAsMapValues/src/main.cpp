@@ -21,6 +21,7 @@ public:
 
 	}
 
+	// copy constructor
 	Person(const Person& other){
 		cout << "Copy constructor running!" << endl;
 		name = other.name;
@@ -39,6 +40,7 @@ int main() {
 	people[32] = Person("Vicky", 30);
 	people[1] = Person("Raj", 20);
 
+	// Copy constructor running!
 	people.insert(make_pair(55, Person("Bob", 45 )));
 	people.insert(make_pair(55, Person("Sue", 24 )));
 

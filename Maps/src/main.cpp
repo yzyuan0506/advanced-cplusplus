@@ -22,6 +22,8 @@ int main() {
 
 	ages["Mike"] = 70;
 
+	// pair<string,int> addToMap("Peter",100);
+	// ages.insert(addToMap);
 	ages.insert(make_pair("Peter", 100));
 
 	cout << ages["Raj"] << endl;

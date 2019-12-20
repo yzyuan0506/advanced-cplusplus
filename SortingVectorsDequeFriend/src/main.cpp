@@ -25,6 +25,7 @@ public:
 		cout << id << ": " << name << endl;
 	}
 
+	// friend 使得外部的comp函数也能访问class里面的private 变量
 	friend bool comp(const Test &first, const Test &second);
 };
 
@@ -43,6 +44,7 @@ int main(int argc, char const *argv[])
 	tests.push_back(Test(7, "Raj"));
 	tests.push_back(Test(3, "Vicky"));
 
+	// 或sort(tests.begin(), tests,end()) 直接利用class里的 < operator来sort
 	sort(tests.begin(), tests.end(), comp);
 
 	for(int i = 0; i < tests.size(); i++)

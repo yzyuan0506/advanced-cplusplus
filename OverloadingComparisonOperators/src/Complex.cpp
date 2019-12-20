@@ -31,6 +31,11 @@ Complex::Complex(): real(0), imaginary(0) {
 
 }
 
+// 重构 *号
+Complex Complex::operator*() const {
+	return	Complex(real, -imaginary); 
+}
+
 Complex::Complex(double real, double imaginary): real(real), imaginary(imaginary) {
 
 }

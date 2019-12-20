@@ -27,6 +27,7 @@ public:
 		
 	}
 
+	// copy constructor
 	Test(const Test& other)
 	{
 		cout << "Copy constructor running" << endl;
@@ -34,6 +35,9 @@ public:
 		this->name = other.name;
 	}
 
+	// assign operator
+	// 这样copy是deep copy, 能真正overwrite对应object内存空间
+	// 如果没有这个函数，'='只会进行shallow copy，只把地址复制过去
 	const Test& operator=(const Test &other) {
 		cout << "Assignment running" << endl;
 		this->id = other.id;
@@ -67,6 +71,7 @@ int main() {
 	cout << endl;
 
 	// Copy initialization. 
+	// 用 copy constructor
 	Test test4 = test1;
 	test4.print();
 	return 0;

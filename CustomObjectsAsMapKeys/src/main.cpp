@@ -21,6 +21,7 @@ public:
 
 	}
 
+	// copy constructor
 	Person(const Person& other) {
 		name = other.name;
 		age = other.age;
@@ -29,9 +30,13 @@ public:
 	void print() const {
 		cout << name << ": " << age << flush;
 	}
-
+	
+	// const 是因为这个operator不会change这个object
+	// overloading '<' operator
+	// 同时也是map判断key是否重复和排序的根据！！
 	bool operator<(const Person &other) const {
-
+		
+		// 名字一样，比较age
 		if (name == other.name) {
 			return age < other.age;
 		} else {
@@ -54,6 +59,7 @@ int main() {
 		it->first.print();
 		cout << endl;
 	}
+	// map会把所有person都按顺序排好！C++的map自动按key排序！！！
 
 	return 0;
 }
