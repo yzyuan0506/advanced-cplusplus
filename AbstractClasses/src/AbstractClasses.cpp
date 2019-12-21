@@ -11,8 +11,10 @@ using namespace std;
 
 class Animal {
 public:
+	// pure virtual function, 并不是真的等于 0
+	// 只是说 no implementation of this, 因为动物太泛了，都不一样
 	virtual void run()=0;
-	virtual void speak() = 0;
+	virtual void speak() = 0;	
 };
 
 class Dog: public Animal {
@@ -55,6 +57,8 @@ int main() {
 	lab.run();
 	lab.speak();
 
+	// 不能创建 Animal的array，如： Animal animals[5];
+	// 因为 Animal 是abstract class， 但是创建Animal 的指针数组
 	Animal *animals[5];
 	animals[0] = &lab;
 
